@@ -3,10 +3,10 @@ import torch.nn.functional as F
 
 
 class Net(nn.Module):
-    def __init__(self):
+    def __init__(self, input_dim, hidden_dim, output_dim):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(2, 4)
-        self.fc2 = nn.Linear(4, 2)
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))

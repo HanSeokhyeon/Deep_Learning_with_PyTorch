@@ -9,14 +9,14 @@ data = data.load_xor_data()
 datasize = data[1].size()[0]
 
 # 2. define a neural net
-net = net.Net()
+net = net.Net(2, 4, 2)
 
 # 3. define a loss function and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
 # 4. train the neural net
-for epoch in range(10000):
+for epoch in range(100000):
 
     running_loss = 0.0
 
