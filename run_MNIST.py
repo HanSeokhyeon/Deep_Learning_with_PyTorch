@@ -61,4 +61,4 @@ with torch.no_grad():
         outputs = net(inputs)
         _, predicted = torch.max(outputs.data, 1)
         correct += (predicted == labels).sum().item()
-    print(correct/10000)
+    print('Accuracy: %.4f' % (correct/10000))
